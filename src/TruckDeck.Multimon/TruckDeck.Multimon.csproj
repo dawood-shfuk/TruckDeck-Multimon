@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8E5F4B2-3C1D-4E9A-9F7B-2D6C8E1A4B03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TruckDeck.Multimon</RootNamespace>
+    <AssemblyName>TruckDeckMultimon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\dist\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\dist\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\InteractiveLayoutCanvas.cs" />
+    <Compile Include="Controls\MainPipEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PipCameraAdjustControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScreenLayoutCanvas.cs" />
+    <Compile Include="Controls\ScreenTileControl.cs" />
+    <Compile Include="Controls\ViewportDragPayload.cs" />
+    <Compile Include="Forms\OverlayViewportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\ApplicationIconHelper.cs" />
+    <Compile Include="Helpers\MultimonTheme.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DriveSide.cs" />
+    <Compile Include="Models\GameTarget.cs" />
+    <Compile Include="Models\LayoutProfile.cs" />
+    <Compile Include="Models\MainPipPanel.cs" />
+    <Compile Include="Models\PhysicalScreenInfo.cs" />
+    <Compile Include="Models\ScreenLayoutEntry.cs" />
+    <Compile Include="Models\ViewportDefinition.cs" />
+    <Compile Include="Models\ViewportRole.cs" />
+    <Compile Include="Models\ViewportRoleGroups.cs" />
+    <Compile Include="Presets\PresetLibrary.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConfigBackupService.cs" />
+    <Compile Include="Services\ConfigCfgPatcher.cs" />
+    <Compile Include="Services\ConfigurationApplyService.cs" />
+    <Compile Include="Services\DrivingModeActivationService.cs" />
+    <Compile Include="Services\DisplayLayoutHelper.cs" />
+    <Compile Include="Services\DisplayEnumerationService.cs" />
+    <Compile Include="Services\GameDocumentsService.cs" />
+    <Compile Include="Services\GameConsoleService.cs" />
+    <Compile Include="Services\GameLogWatcher.cs" />
+    <Compile Include="Services\GameLaunchService.cs" />
+    <Compile Include="Services\GameProcessGuard.cs" />
+    <Compile Include="Services\GameWindowSpanService.cs" />
+    <Compile Include="Services\GraphicsResetService.cs" />
+    <Compile Include="Services\MainPipLayoutService.cs" />
+    <Compile Include="Services\MenuLayoutHelper.cs" />
+    <Compile Include="Services\MultimonConfigReader.cs" />
+    <Compile Include="Services\MultimonConfigWriter.cs" />
+    <Compile Include="Services\NativeMainFloatingLayout.cs" />
+    <Compile Include="Services\NormalizedCoordCalculator.cs" />
+    <Compile Include="Services\OverlayCaptureService.cs" />
+    <Compile Include="Services\OverlayHostService.cs" />
+    <Compile Include="Services\ScsTelemetryReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.ico" Condition="Exists('Resources\app.ico')" />
+  </ItemGroup>
+  <Target Name="CopyPresets" AfterTargets="Build">
+    <ItemGroup>
+      <PresetFiles Include="$(ProjectDir)..\..\Presets\*.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PresetFiles)" DestinationFolder="$(OutDir)Presets\" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="Resources\app.ico" DestinationFolder="$(OutDir)Resources\" SkipUnchangedFiles="true" Condition="Exists('Resources\app.ico')" />
+  </Target>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

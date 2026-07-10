@@ -1,0 +1,13 @@
+{
+  "name": "Six Surround",
+  "minScreens": 6,
+  "maxScreens": 6,
+  "screens": [
+    { "role": "Left", "split": false },
+    { "role": "Left", "split": false },
+    { "role": "Center", "split": false },
+    { "role": "Right", "split": false },
+    { "role": "Right", "split": false },
+    { "role": "Aux", "split": false }
+  ]
+}

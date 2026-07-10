@@ -1,0 +1,9 @@
+{
+  "name": "Dual — Main + Side",
+  "minScreens": 2,
+  "maxScreens": 2,
+  "screens": [
+    { "role": "Center", "split": false },
+    { "role": "Right", "split": false }
+  ]
+}

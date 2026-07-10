@@ -1,0 +1,7 @@
+{
+  "name": "4 screens — bottom center + side window screen",
+  "layout": "quad2x2_bottomCenter",
+  "minScreens": 4,
+  "maxScreens": 4,
+  "screens": []
+}

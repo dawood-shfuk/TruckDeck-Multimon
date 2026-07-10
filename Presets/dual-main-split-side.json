@@ -1,0 +1,7 @@
+{
+  "name": "Dual — Main + Split Side",
+  "layout": "mainCenter_otherSplit",
+  "minScreens": 2,
+  "maxScreens": 2,
+  "screens": []
+}

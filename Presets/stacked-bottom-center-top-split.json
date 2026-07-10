@@ -1,0 +1,7 @@
+{
+  "name": "Stacked — bottom center / top side windows",
+  "layout": "stackedBottomCenter_topSplit",
+  "minScreens": 2,
+  "maxScreens": 6,
+  "screens": []
+}

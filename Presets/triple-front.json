@@ -1,0 +1,10 @@
+{
+  "name": "Triple Front",
+  "minScreens": 3,
+  "maxScreens": 3,
+  "screens": [
+    { "role": "Left", "split": false },
+    { "role": "Center", "split": false },
+    { "role": "Right", "split": false }
+  ]
+}

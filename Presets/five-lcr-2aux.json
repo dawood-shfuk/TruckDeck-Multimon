@@ -1,0 +1,12 @@
+{
+  "name": "Five — L/C/R + 2 Aux",
+  "minScreens": 5,
+  "maxScreens": 5,
+  "screens": [
+    { "role": "Left", "split": false },
+    { "role": "Center", "split": false },
+    { "role": "Right", "split": false },
+    { "role": "Aux", "split": false },
+    { "role": "Aux", "split": false }
+  ]
+}
