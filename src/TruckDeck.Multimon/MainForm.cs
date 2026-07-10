@@ -29,6 +29,9 @@ namespace TruckDeck.Multimon
             MultimonTheme.ApplyDefaultWindowSize(this);
             titleLabel.ForeColor = MultimonTheme.Accent;
             titleLabel.Font = MultimonTheme.TitleFont;
+            var ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            if (ver != null)
+                Text = $"TruckDeck Multimon {ver.Major}.{ver.Minor}.{ver.Build}.{ver.Revision}";
             FormClosing += (_, __) =>
             {
                 OverlayHostService.Stop();
