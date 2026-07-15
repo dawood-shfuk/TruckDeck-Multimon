@@ -4,20 +4,22 @@ Portable Windows wizard for **Euro Truck Simulator 2** and **American Truck Simu
 
 Companion to [TruckDeck](https://truckdeck.site) telemetry — **does not require TruckDeck.exe**.
 
-**Current version: 1.2.0.5**
+**Current version: 1.2.0.6**
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 ## Download
 
 | Source | Link |
 |--------|------|
 | **TruckDeck site** (recommended) | [truckdeck.site/downloads](https://truckdeck.site/downloads#multimon) |
-| **Direct ZIP** | [TruckDeck-Multimon-1.2.0.5.zip](https://truckdeck.site/downloads/TruckDeck-Multimon-1.2.0.5.zip) |
-| **GitHub release** | [v1.2.0.5](https://github.com/dawood-shfuk/TruckDeck-Multimon/releases/tag/v1.2.0.5) |
+| **Direct ZIP** | [TruckDeck-Multimon-1.2.0.6.zip](https://truckdeck.site/downloads/TruckDeck-Multimon-1.2.0.6.zip) |
+| **GitHub release** | [v1.2.0.6](https://github.com/dawood-shfuk/TruckDeck-Multimon/releases/tag/v1.2.0.6) |
 | **PiP guide** | [truckdeck.site/multimon](https://truckdeck.site/multimon) |
 
 **Install:** unzip anywhere → run `TruckDeckMultimon.exe` → close the game → **Apply & Launch**.
 
-**SHA-256:** `ad05791892c16c15d36b3d228fad602d0ebe9bb99757450b0488fd140d6b80cb`
+**SHA-256:** `d423ae7865fd3d9cb8c8e4b6d8391bb509a762a2fa4f3828afd13a311c5315b5`
 
 ## What is PiP?
 
@@ -44,7 +46,7 @@ SCS allows up to **four** `monitor_config` regions: Center + up to three PiP pan
 
 ## Quick start
 
-1. Download and unzip **TruckDeck-Multimon-1.2.0.5.zip**.
+1. Download and unzip **TruckDeck-Multimon-1.2.0.6.zip**.
 2. Run `TruckDeckMultimon.exe`.
 3. **Close ETS2/ATS** if running (Apply is blocked while the game is open).
 4. **PiP on MAIN:** open the **PiP on MAIN** tab → enable → place panels → adjust camera → **Apply & Launch**.
@@ -52,7 +54,7 @@ SCS allows up to **four** `monitor_config` regions: Center + up to three PiP pan
 6. Do **not** change in-game **Display** options afterward — that resets multimon.
 7. Optional in-game fine-tune (developer console): `multimon set …` then `multimon save`.
 
-## Features (1.2.0.5)
+## Features (1.2.0.6)
 
 - **PiP on MAIN** — native MAIN resolution + free-place side cameras on the same screen
 - Camera controls — heading / pitch / FOV zoom; load saved cameras from existing `multimon_config.sii`

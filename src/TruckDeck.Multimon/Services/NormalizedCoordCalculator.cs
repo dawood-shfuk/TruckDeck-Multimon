@@ -236,10 +236,11 @@ namespace TruckDeck.Multimon.Services
             {
                 case ViewportRole.Left:
                     // Side window looking out — interior ON so wing mirrors stay in view.
+                    // Positive SCS heading looks to the driver's right; Left view uses negative yaw.
                     return new CameraDefaults
                     {
                         Name = "left",
-                        HeadingOffset = 52f * sign,
+                        HeadingOffset = -52f * sign,
                         PitchOffset = -6f,
                         HorizontalFovOverride = 70f,
                         RenderInterior = true,
@@ -249,7 +250,7 @@ namespace TruckDeck.Multimon.Services
                     return new CameraDefaults
                     {
                         Name = "right",
-                        HeadingOffset = -52f * sign,
+                        HeadingOffset = 52f * sign,
                         PitchOffset = -6f,
                         HorizontalFovOverride = 70f,
                         RenderInterior = true,
@@ -262,7 +263,7 @@ namespace TruckDeck.Multimon.Services
                     return new CameraDefaults
                     {
                         Name = "left_mirror",
-                        HeadingOffset = 78f * sign,
+                        HeadingOffset = -78f * sign,
                         PitchOffset = -8f,
                         HorizontalFovOverride = 55f,
                         RenderInterior = true,
@@ -272,7 +273,7 @@ namespace TruckDeck.Multimon.Services
                     return new CameraDefaults
                     {
                         Name = "right_mirror",
-                        HeadingOffset = -78f * sign,
+                        HeadingOffset = 78f * sign,
                         PitchOffset = -8f,
                         HorizontalFovOverride = 55f,
                         RenderInterior = true,
